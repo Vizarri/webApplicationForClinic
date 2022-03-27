@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>all students</title>
+</head>
+
+<body>
+
+<p>all students!</p>
+<div th:each="student : ${students}">
+    <a th:text="${student.getName()} + ' ' + ${student.getSurname()} + ' ' + ${student.getDateOfBirth()}+ ' ' + ${student.getFaculty()}+ ' ' + ${student.getReferences()} ">user</a>
+</div>
+
+<form method="POST" th:action="@{/students/download}" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td><label path="file">Select a file to upload</label></td>
+            <td><input type="file" name="file" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+
+<div>
+<a th:href="@{/students/export/excel}">Export to Excel</a>
+</div>
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit" >logout</button>
+</form>
+
+</body>
+
+</html>
