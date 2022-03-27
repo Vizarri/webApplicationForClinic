@@ -16,7 +16,7 @@ public class StudentsDAO {
         this.jdbcTemplate=jdbcTemplate;
     }
     public void save(Student newStudent) {
-        jdbcTemplate.update("INSERT INTO students VALUES(DEFAULT,?,?,?,?,?)",newStudent.getName(),newStudent.getSurname(),newStudent.getDateOfBirth(),newStudent.getFaculty(),newStudent.getReferences());
+        jdbcTemplate.update("INSERT INTO students VALUES(DEFAULT,?,?,?,?,?)",newStudent.getFio(),newStudent.getGender(),newStudent.getDateOfBirth(),newStudent.getFaculty(),newStudent.getReferences());
     }
     public List<Student> index() {
         return jdbcTemplate.query("SELECT * FROM students",new BeanPropertyRowMapper<>(Student.class));

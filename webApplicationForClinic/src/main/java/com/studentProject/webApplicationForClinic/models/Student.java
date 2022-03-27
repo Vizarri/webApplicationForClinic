@@ -1,71 +1,26 @@
 package com.studentProject.webApplicationForClinic.models;
 
 
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Data
+@Entity
+@Table(name = "students")
 public class Student {
 
-    private int id;
-
-    private String name;
-
-
-    private String surname;
-
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "fio")
+    private String Fio;
+    @Column(name = "gender")
+    private String gender;
+    @Column(name = "dateOfBirth")
     private String dateOfBirth;
-
-
+    @Column(name = "faculty")
     private String faculty;
-
-
+    @Column(name = "references")
     private String references;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public String getSurname() {
-        return this.surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getDateOfBirth() {
-        return this.dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getFaculty() {
-        return this.faculty;
-    }
-
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
-    }
-
-    public String getReferences() {
-        return this.references;
-    }
-
-    public void setReferences(String references) {
-        this.references = references;
-    }
-
 }

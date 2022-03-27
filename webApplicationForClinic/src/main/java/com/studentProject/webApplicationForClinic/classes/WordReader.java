@@ -52,8 +52,8 @@ public class WordReader {
 /*                        for (int j = 0; j < xwpfTable.getRow(i).getTableCells().size(); j++) {
                             System.out.println(xwpfTable.getRow(i).getCell(j).getText());
                         }*/
-                        student.setName(xwpfTable.getRow(i).getCell(0).getText());
-                        student.setSurname(xwpfTable.getRow(i).getCell(1).getText());
+                        student.setFio(xwpfTable.getRow(i).getCell(0).getText());
+                        student.setGender(xwpfTable.getRow(i).getCell(1).getText());
                         student.setDateOfBirth(xwpfTable.getRow(i).getCell(2).getText());
                         student.setFaculty(xwpfTable.getRow(i).getCell(3).getText());
                         student.setReferences(xwpfTable.getRow(i).getCell(4).getText());

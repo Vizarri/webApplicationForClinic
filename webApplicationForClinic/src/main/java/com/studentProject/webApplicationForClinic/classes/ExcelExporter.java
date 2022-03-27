@@ -14,9 +14,9 @@ import java.io.IOException;
 import java.util.List;
 
 public class ExcelExporter {
-    private XSSFWorkbook workbook;
+    private final XSSFWorkbook workbook;
     private XSSFSheet sheet;
-    private List<Student> studentList;
+    private final List<Student> studentList;
 
     public ExcelExporter(List<Student> listUsers) {
         this.studentList = listUsers;
@@ -36,8 +36,8 @@ public class ExcelExporter {
         style.setFont(font);
 
         createCell(row, 0, "ID", style);
-        createCell(row, 1, "name", style);
-        createCell(row, 2, "surname", style);
+        createCell(row, 1, "fio", style);
+        createCell(row, 2, "gender", style);
         createCell(row, 3, "dateOfBirth", style);
         createCell(row, 4, "faculty", style);
         createCell(row, 5, "references", style);
@@ -70,8 +70,8 @@ public class ExcelExporter {
             int columnCount = 0;
 
             createCell(row, columnCount++, student.getId(), style);
-            createCell(row, columnCount++, student.getName(), style);
-            createCell(row, columnCount++, student.getSurname(), style);
+            createCell(row, columnCount++, student.getFio(), style);
+            createCell(row, columnCount++, student.getGender(), style);
             createCell(row, columnCount++, student.getDateOfBirth(), style);
             createCell(row, columnCount++, student.getFaculty(), style);
             createCell(row, columnCount++, student.getReferences(), style);

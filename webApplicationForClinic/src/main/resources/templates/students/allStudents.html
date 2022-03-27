@@ -10,7 +10,7 @@
 
 <p>all students!</p>
 <div th:each="student : ${students}">
-    <a th:text="${student.getName()} + ' ' + ${student.getSurname()} + ' ' + ${student.getDateOfBirth()}+ ' ' + ${student.getFaculty()}+ ' ' + ${student.getReferences()} ">user</a>
+    <a th:text="${student.getFio()} + ' ' + ${student.getGender()} + ' ' + ${student.getDateOfBirth()}+ ' ' + ${student.getFaculty()}+ ' ' + ${student.getReferences()} ">user</a>
 </div>
 
 <form method="POST" th:action="@{/students/download}" enctype="multipart/form-data">
