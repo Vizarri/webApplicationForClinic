@@ -5,9 +5,7 @@
 </head>
 <body>
 Add new user
-{{#message}}
-{{message}}
-{{/message}}
+<p style="color: red"> [[${message} ? ${message} : '']]</p>
 <form th:action="@{/registration}" method="post">
     <div><label> Email : <input type="text" name="email"/> </label></div>
     <div><label> Password: <input type="password" name="password"/> </label></div>
