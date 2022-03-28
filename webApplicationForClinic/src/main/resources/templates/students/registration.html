@@ -17,40 +17,42 @@
         <div class="form-element" >
             <label>Имя</label>
             <div class="pd"></div>
-            <input id="reg" type="" placeholder="Иван" name="firstName" >
+            <input id="reg" class="reg" type="" placeholder="Иван" name="firstName" >
         </div>
         <div class="form-element" >
             <label>Фамилия</label>
             <div class="pd"></div>
-            <input id="reg" type="" placeholder="Иванович" name="lastName" >
+            <input id="reg" class="reg" type="" placeholder="Иванович" name="lastName" >
         </div>
         <div class="form-element" >
             <label>Почта</label>
             <div class="pd"></div>
-            <input id="reg" type="" placeholder="example@mail.com" name="email" >
+            <input id="reg" class="reg" type="" placeholder="example@mail.com" name="email" >
+            <p id="">Некорректный адрес почты</p>
         </div>
         
         <div class="form-element">
             <label>Пароль</label>
             <div class="pd"></div>
-            <input id="reg" type="password">
+            <input id="password" class="reg" type="password">
             <div class="pd"></div>
             <div class="password-requirements-wrapper">
                 <div class="checkbox-wrapper">
-                    <input class="checkbox" type="checkbox" name="">
-                    <div class="checkbox-tip">не менее 8 символов</div>
+                    <input id="checksym" class="checkbox" type="checkbox" name="" disabled>
+                    <div id="checksym-text" class="checkbox-tip-invalid">не менее 8 символов</div>
                 </div>
                 
                 <div class="checkbox-wrapper">
-                    <input class="checkbox" type="checkbox" name="">
-                    <div class="checkbox-tip">1 специальный символ</div>
+                    <input id="specsymb" class="checkbox" type="checkbox" name="" disabled>
+                    <div class="checkbox-tip-invalid">1 специальный символ</div>
                 </div>
             </div>
         </div>
         <div class="form-element">
             <label>Подтверждение пароля</label>
             <div class="pd"></div>
-            <input id="reg" type="password" name="password">
+            <input id="passwordRepeat" class="reg" type="password" name="password">
+            <p>Пароли не совпадают</p>
         </div>
         <div class="form-element">
             <button type="submit" class="button-submit" id="reg">
