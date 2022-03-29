@@ -8,7 +8,9 @@
         Войти
     </title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="registrationScript.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="head" id="reg">Зарегистрироваться</div>
@@ -44,15 +46,15 @@
                 
                 <div class="checkbox-wrapper">
                     <input id="specsymb" class="checkbox" type="checkbox" name="" disabled>
-                    <div class="checkbox-tip-invalid">1 специальный символ</div>
+                    <div id="specsymb-text" class="checkbox-tip-invalid">сложный пароль</div>
                 </div>
             </div>
         </div>
         <div class="form-element">
             <label>Подтверждение пароля</label>
-            <div class="pd"></div>
+            <div class="pd" id="pd"></div>
             <input id="passwordRepeat" class="reg" type="password" name="password">
-            <p>Пароли не совпадают</p>
+            <p id="equals">Пароли не совпадают</p>
         </div>
         <div class="form-element">
             <button type="submit" class="button-submit" id="reg">
