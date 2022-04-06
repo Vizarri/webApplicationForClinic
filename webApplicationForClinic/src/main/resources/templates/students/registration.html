@@ -7,10 +7,11 @@
     <title>
         Войти
     </title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
-    <script src="registrationScript.js" type="text/javascript"></script>
+    // вот такие штуки по аналогии нужно юзать везде
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script th:src="@{/js/registrationScript.js}"></script>
 </head>
 <body>
 <div class="head" id="reg">Зарегистрироваться</div>
