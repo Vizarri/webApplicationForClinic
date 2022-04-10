@@ -7,20 +7,20 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "students")
+@Table(name = "students",schema = "public")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "fio")
-    private String Fio;
+    private String fio;
     @Column(name = "gender")
     private String gender;
-    @Column(name = "dateOfBirth")
+    @Column(name = "date_of_birth")
     private String dateOfBirth;
     @Column(name = "faculty")
     private String faculty;
-    @Column(name = "references")
-    private String references;
+    @Column(name = "reference")
+    private String reference;
 }

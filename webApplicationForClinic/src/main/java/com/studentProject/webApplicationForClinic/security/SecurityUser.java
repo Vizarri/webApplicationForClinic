@@ -1,6 +1,6 @@
 package com.studentProject.webApplicationForClinic.security;
 
-import com.studentProject.webApplicationForClinic.models.Status;
+import com.studentProject.webApplicationForClinic.models.enums.Status;
 import com.studentProject.webApplicationForClinic.models.User;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

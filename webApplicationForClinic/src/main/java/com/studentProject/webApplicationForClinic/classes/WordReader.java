@@ -56,7 +56,7 @@ public class WordReader {
                         student.setGender(xwpfTable.getRow(i).getCell(1).getText());
                         student.setDateOfBirth(xwpfTable.getRow(i).getCell(2).getText());
                         student.setFaculty(xwpfTable.getRow(i).getCell(3).getText());
-                        student.setReferences(xwpfTable.getRow(i).getCell(4).getText());
+                        student.setReference(xwpfTable.getRow(i).getCell(4).getText());
                         students.add(student);
                     }
                 }

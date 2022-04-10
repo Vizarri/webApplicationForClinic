@@ -1,4 +1,4 @@
-package com.studentProject.webApplicationForClinic.models;
+package com.studentProject.webApplicationForClinic.models.enums;
 
 public enum Permission {
     READ("permission:read"),

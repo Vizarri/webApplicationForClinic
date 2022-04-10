@@ -1,7 +1,7 @@
 package com.studentProject.webApplicationForClinic.controllers;
 
-import com.studentProject.webApplicationForClinic.models.Role;
-import com.studentProject.webApplicationForClinic.models.Status;
+import com.studentProject.webApplicationForClinic.models.enums.Role;
+import com.studentProject.webApplicationForClinic.models.enums.Status;
 import com.studentProject.webApplicationForClinic.models.User;
 import com.studentProject.webApplicationForClinic.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

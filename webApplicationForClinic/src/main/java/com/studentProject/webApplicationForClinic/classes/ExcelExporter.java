@@ -40,7 +40,7 @@ public class ExcelExporter {
         createCell(row, 2, "gender", style);
         createCell(row, 3, "dateOfBirth", style);
         createCell(row, 4, "faculty", style);
-        createCell(row, 5, "references", style);
+        createCell(row, 5, "reference", style);
 
     }
 
@@ -74,7 +74,7 @@ public class ExcelExporter {
             createCell(row, columnCount++, student.getGender(), style);
             createCell(row, columnCount++, student.getDateOfBirth(), style);
             createCell(row, columnCount++, student.getFaculty(), style);
-            createCell(row, columnCount++, student.getReferences(), style);
+            createCell(row, columnCount++, student.getReference(), style);
 
         }
     }

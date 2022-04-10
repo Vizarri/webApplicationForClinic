@@ -1,5 +1,7 @@
 package com.studentProject.webApplicationForClinic.models;
 
+import com.studentProject.webApplicationForClinic.models.enums.Role;
+import com.studentProject.webApplicationForClinic.models.enums.Status;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -7,7 +9,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "users")
+@Table(name = "users",schema = "public")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -10,7 +10,7 @@
 
 <p>all students!</p>
 <div th:each="student : ${students}">
-    <a th:text="${student.getFio()} + ' ' + ${student.getGender()} + ' ' + ${student.getDateOfBirth()}+ ' ' + ${student.getFaculty()}+ ' ' + ${student.getReferences()} ">user</a>
+    <a th:text="${student.getFio()} + ' ' + ${student.getGender()} + ' ' + ${student.getDateOfBirth()}+ ' ' + ${student.getFaculty()}+ ' ' + ${student.getReference()} ">user</a>
 </div>
 
 <form method="POST" th:action="@{/students/download}" enctype="multipart/form-data">
@@ -23,6 +23,25 @@
             <td><input type="submit" value="Submit" /></td>
         </tr>
     </table>
+</form>
+
+<form th:method="POST" th:action="@{/students/newStudent}" th:object="${student}">
+    <label for="fio">Enter fio: </label>
+    <input type="text" th:field="*{fio}" id="fio">
+    <br/>
+    <label for="gender">Enter gender: </label>
+    <input type="text" th:field="*{gender}" id="gender">
+    <br/>
+    <label for="dateOfBirth">Enter dateOfBirth: </label>
+    <input type="text" th:field="*{dateOfBirth}" id="dateOfBirth">
+    <br/>
+    <label for="faculty">Enter faculty: </label>
+    <input type="text" th:field="*{faculty}" id="faculty">
+    <br/>
+    <label for="reference">Enter reference: </label>
+    <input type="text" th:field="*{reference}" id="reference">
+    <br/>
+    <input th:type="submit" value="Create!"/>
 </form>
 
 <div>

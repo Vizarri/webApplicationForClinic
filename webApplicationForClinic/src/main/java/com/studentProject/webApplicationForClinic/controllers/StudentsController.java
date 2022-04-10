@@ -3,17 +3,14 @@ package com.studentProject.webApplicationForClinic.controllers;
 
 import com.studentProject.webApplicationForClinic.classes.ExcelExporter;
 import com.studentProject.webApplicationForClinic.classes.WordReader;
-import com.studentProject.webApplicationForClinic.dao.StudentsDAO;
 import com.studentProject.webApplicationForClinic.models.Student;
+import com.studentProject.webApplicationForClinic.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
@@ -26,11 +23,11 @@ import java.util.List;
 @Controller
 @RequestMapping("/students")
 public class StudentsController {
-    private final StudentsDAO studentsDAO;
+    private final StudentRepository studentRepository;
 
     @Autowired
-    public StudentsController(StudentsDAO studentsDAO) {
-        this.studentsDAO = studentsDAO;
+    public StudentsController(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
     }
 
 
@@ -43,9 +40,7 @@ public class StudentsController {
         if (!file.isEmpty()) {
             try {
                 List<Student> students = WordReader.readWordFile(file);
-                for (Student oneStudent : students) {
-                    studentsDAO.save(oneStudent);
-                }
+                studentRepository.saveAll(students);
                 return "redirect:/students/allStudents";
             } catch (Exception e) {
                 System.out.println("Вам не удалось загрузить ");
@@ -60,8 +55,8 @@ public class StudentsController {
 
     @GetMapping("/allStudents")
     @PreAuthorize("hasAuthority('permission:read')")
-    public String index(Model model) {
-        model.addAttribute("students", studentsDAO.index());
+    public String index(Model model, @ModelAttribute("student") Student student) {
+        model.addAttribute("students", studentRepository.findAll());
         return "students/allStudents";
     }
 
@@ -75,11 +70,21 @@ public class StudentsController {
         String headerKey = "Content-Disposition";
         String headerValue = "attachment; filename=students_" + currentDateTime + ".xlsx";
         response.setHeader(headerKey, headerValue);
-        List<Student> studentList = studentsDAO.index();
+        List<Student> studentList = studentRepository.findAll();
 
         ExcelExporter excelExporter = new ExcelExporter(studentList);
 
         excelExporter.export(response);
     }
+
+    @PostMapping("/newStudent")
+    @PreAuthorize("hasAuthority('permission:write')")
+    public String createNewStudent(Student student) {
+        System.out.println("Пришедшая модель " + student.toString());
+        studentRepository.save(student);
+        return "redirect:/students/allStudents";
+
+    }
+
 
 }
