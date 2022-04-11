@@ -7,11 +7,10 @@
     <title>
         Войти
     </title>
-    // вот такие штуки по аналогии нужно юзать везде
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" href="style.css"/>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-    <script th:src="@{/js/registrationScript.js}"></script>
+    <script th:src="@{/js/registrationScript.js}" src="registrationScript.js"></script>
 </head>
 <body>
 <div class="head" id="reg">Зарегистрироваться</div>
@@ -37,7 +36,8 @@
         <div class="form-element">
             <label>Пароль</label>
             <div class="pd"></div>
-            <input id="password" class="reg" type="password">
+                <input id="password" class="reg" type="password">
+                <a class="password-control-reg" href="#"><img class="password-control-reg-img" src="img/password-control.png"></a>
             <div class="pd"></div>
             <div class="password-requirements-wrapper">
                 <div class="checkbox-wrapper">
@@ -53,6 +53,7 @@
         </div>
         <div class="form-element">
             <label>Подтверждение пароля</label>
+            <a class="password-control-reg" id="repeat" href="#"><img class="password-control-reg-img" src="img/password-control.png"></a>
             <div class="pd" id="pd"></div>
             <input id="passwordRepeat" class="reg" type="password" name="password">
             <p id="equals">Пароли не совпадают</p>
@@ -64,6 +65,6 @@
         </div>
     </form>
 </div>
-<a th:href="@{/auth/login}" href="SignIn.html" class="link" id="reg">Войти</a>
+<a th:href="@{/auth/login}" href="login.html" class="link" id="reg">Войти</a>
 </body>
 </html>

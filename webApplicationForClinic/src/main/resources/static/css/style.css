@@ -50,7 +50,7 @@ input{
 
 
 }
-input#reg{
+input.reg{
 	width: 338px;
 	height: 36px;
 }
@@ -91,7 +91,7 @@ input#reg{
 #reg.button-submit{
 	width: 338px;
 	height: 36px;
-	margin-top: 20px;
+	margin-top: 0px;
 }
 .button-text{
 	width: 44px;
@@ -120,7 +120,7 @@ input#reg{
 .link{
 	position: absolute;
 	top: 428px;
-	left: 650px;
+	left: 44.5%;
 	width: 148px;
 	height: 24px;
 	font-family: 'SF Pro Display';
@@ -132,15 +132,15 @@ input#reg{
 	text-decoration: none;
 }
 #reg.link{
-	top: 680px;
-	left: 698px;
+	top: 700px;
+	left: 49%;
 }
 .head
 {
 	position: absolute;
 	width: 111px;
 	height: 48px;
-	left: 670px;
+	left: 46%;
 	top: 70px;
 	font-family: 'SF Pro Display';
 	font-style: normal;
@@ -158,7 +158,7 @@ input#reg{
 #reg.head{
 	width: 380px;
 	height: 48px;
-	left: 540px;
+	left: 38%;
 	top: 55px;
 }
 
@@ -167,7 +167,7 @@ input#reg{
 	position: relative;
 	width: 295px;
 	height: 270px;
-	left: 572px;
+	left: 40%;
 	top: 130px;
 
 	background: #FFFFFF;
@@ -180,8 +180,8 @@ input#reg{
 #reg.container-wrapper{
 	position: relative;
 	width: 378px;
-	height: 550px;
-	left: 531px;
+	height: 565px;
+	left: 38%;
 	top: 110px;
 }
 
@@ -201,6 +201,26 @@ input#reg{
 	border: 1px solid #CED4DA;
 	box-sizing: border-box;
 	border-radius: 2px;
+}
+.checkbox-tip-valid{
+	width: 130px;
+	font-family: 'SF Pro Display';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 11.8px;
+	line-height: 19px;
+
+	color: green;
+}
+.checkbox-tip-invalid{
+	width: 130px;
+	font-family: 'SF Pro Display';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 11.8px;
+	line-height: 19px;
+
+	color: #DC3545;
 }
 .checkbox-tip{
 	width: 130px;
@@ -400,7 +420,7 @@ input#reg{
 	justify-content: space-between;
 }
 .form-fio span{
-	color: red;
+	color: #DC3545;
 }
 
 .form-fio-tip{
@@ -470,7 +490,7 @@ input#reg{
 	left: 171px;
 	top: 494px;
 	border-radius: 3px;
-	border-color: red;
+	border-color: #DC3545;
 	background: white;
 }
 
@@ -499,9 +519,136 @@ input#reg{
 	/* Global/04. Danger */
 	color: #DC3545;
 }
+.equals#equals{
+	visibility: visible;
+}
+
+.email-invalid#email-invalid{
+	visibility: visible;
+}
+
+.form-element p{
+	position: static;
+	width: 255px;
+	height: 20px;
+	left: 0px;
+	top: 4px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-family: 'SF Pro Display';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 19px;
+
+	/* identical to box height, or 150% */
+
+	/* Global/04. Danger */
+	color: #DC3545;
+
+	visibility: hidden;
+}
+
 input#pass{
 	position: absolute;
 	top: 39px;
 	width: 255px;
 	height: 36px;
+}
+
+.file-input{
+	visibility: hidden;
+	display: none;
+}
+
+.file-input-label{
+	position: absolute;
+	width: 120px;
+	height: 30px;
+	left: 50px;
+	top: 207px;
+
+	background: #007BFF;
+	border-radius: 4px;
+
+	font-family: 'SF Pro Display';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 24px;
+
+	/* Global/09. White */
+	color: #FFFFFF;
+
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+.file-input-submit{
+	position: absolute;
+	left: 210px;
+	top: 205px;
+
+	background: #007BFF;
+	border-radius: 4px;
+
+	font-family: 'SF Pro Display';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 24px;
+
+	/* Global/09. White */
+	color: #FFFFFF;
+
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+.file-input-submit-text{
+	position: relative;
+	width: 120px;
+	height: 30px;
+}
+
+.password-control {
+	position: absolute;
+	top: 164px;
+	left: 83%;
+	display: inline-block;
+	width: 24px;
+	height: 16px;
+}
+
+.password-control-img {
+	position: inherit;
+	display: inline-block;	
+	width: 24px;
+	height: 16px;
+
+}
+
+.password-control-reg {
+	position: absolute;
+	top: 325px;
+	left: 86%;
+	display: inline-block;
+	width: 24px;
+	height: 16px;
+}
+
+.password-control-reg-img {
+	position: inherit;
+	display: inline-block;	
+	width: 24px;
+	height: 16px;
+}
+
+#repeat.password-control-reg {
+	top: 451px;
+	left: 86%;
 }

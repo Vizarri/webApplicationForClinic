@@ -93,5 +93,29 @@ $(document).ready(function(){
 			alert("Не все поля заполнены корректно");
 		}
 
-	})
+	});
+
+	$(".password-control").click(function(){
+		if($(".password-control-img").attr('src') == 'img/password-control.png'){
+			$(".password-control-img").attr('src','img/password-control-hide.png');
+			$(".login-password").attr('type','text');
+		}
+		else{
+			$(".password-control-img").attr('src','img/password-control.png');
+			$(".login-password").attr('type','password');
+		}
+	});
+
+	$(".password-control-reg").click(function(){
+		if($(".password-control-reg-img").attr('src') == 'img/password-control.png'){
+			$(".password-control-reg-img").attr('src','img/password-control-hide.png');
+			$("#password").attr('type','text');
+			$("#passwordRepeat").attr('type','text');
+		}
+		else{
+			$(".password-control-reg-img").attr('src','img/password-control.png');
+			$("#password").attr('type','password');
+			$("#passwordRepeat").attr('type','password');
+		}
+	});
 });
