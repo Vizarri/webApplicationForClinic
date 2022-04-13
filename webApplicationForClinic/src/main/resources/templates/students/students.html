@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Студенты	</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body class="profile">
+	<div class="main-wrapper">
+		<div class="main-header">
+			<div class="main-header-gui">GUI</div>
+			<a href="students.html" class="main-header-stud-link">Студенты</a>
+			<a href="reports.html" class="main-header-rep-link">Отчеты</a>
+			<img class="avatar" src="img/avatar.png">
+		</div>
+		<div class="main-body">
+			<div class="main-body-title">Студенты</div>
+			<div class="main-body-tip">Загрузите базу студентов в формате Word.</div>
+			<div class="main-body-import">
+				<form method="POST" th:action="@{/students/download}" enctype="multipart/form-data">
+					<input id="file-input" type="file" name="file" />
+					<label for="file-input" class="file-input-label" >Загрузить</label>
+					<button type="submit" class="file-input-submit" value="Submit">
+						<div class="file-input-submit-text">Импортировать</div>
+					</button>
+				</form>
+				<table class="students-table" >
+					<tr>
+						<th id="title">ФИО</th><th id="title">Пол</th><th id="title">Дата рождения</th><th id="title">Факультет</th><th id="title">Справка</th>
+					</tr>
+					<tr th:each="student : ${students}">
+						<th th:text="${student.getFio()}"></th>
+						<th th:text="${student.getGender()}"></th>
+						<th th:text="${student.getDateOfBirth()}"></th>
+						<th th:text="${student.getFaculty()}"></th>
+						<th th:text="${student.getReferences()}"></th>
+					</tr>
+				</table>
+			</div> 
+		</div>
+	</div>
+
+</body>
+</html>
