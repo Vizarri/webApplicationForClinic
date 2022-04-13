@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Мой профиль</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet" href="style.css"/>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script th:src="@{/js/profileScript.js}" src="profileScript.js"></script>
+</head>
+<body class="profile">
+	<div class="main-wrapper">
+		<div class="main-header">
+			<div class="main-header-gui">GUI</div>
+			<a href="students.html" class="main-header-stud-link">Студенты</a>
+			<a href="reports.html" class="main-header-rep-link">Отчеты</a>
+			<img class="avatar" src="img/avatar.png">
+		</div>
+		<div class="main-body">
+			<div class="main-body-title">Мой профиль</div>
+			<div class="main-body-tip">Заполните данные профиля для корректного отображения в системе.</div>
+			<form>
+				<div class="form-fio">
+					<div class="form-fio-element">
+						<label>Имя <span>*</span></label>
+						<input name="" placeholder="Иван">
+						<p>Недопустимые символы</p>
+					</div>
+					<div class="form-fio-element">
+						<label>Фамилия <span>*</span></label>
+						<input name="" placeholder="Иванов">
+						<p></p>
+					</div>
+					<div class="form-fio-element">
+						<label>Отчество <span>*</span></label>
+						<input name="" placeholder="Иванович">
+						<p></p>
+					</div>
+					<div class="form-fio-tip">Данные для входа</div>
+					
+				</div>
+				<div class="form-fio" id="auth">
+					<div class="form-fio-element">
+						<label>Почта</label>
+						<input id="email" name="" placeholder="example@mail.com">
+						<p id="email-invalid" >Некорректный адрес почты</p>
+					</div>
+					<div class="form-fio-element">
+						<label>Пароль</label>
+						<input id="pass" name="" type="password">
+						<a class="password-control-prof" href="#"><img class="password-control-prof-img" src="img/password-control.png"></a>
+						<div class="password-requirements-wrapper">
+							<div class="checkbox-wrapper">
+								<input id="checksym" class="checkbox" type="checkbox" name="" disabled>
+								<div id="checksym-text" class="checkbox-tip-invalid">не менее 8 символов</div>
+							</div>
+							
+							<div class="checkbox-wrapper">
+								<input id="specsymb" class="checkbox" type="checkbox" name="" disabled>
+								<div id="specsymb-text" class="checkbox-tip-invalid">1 специальный символ</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-fio-element">
+						<label>Подтвердите пароль</label>
+						<input id="passRepeat" name="" type="password">
+						<a class="password-control-prof" id="repeat" href="#"><img class="password-control-prof-img" src="img/password-control.png"></a>
+						<p id="profile-equals">Пароли не совпадают</p>
+					</div>
+				</div>
+				<button class="form-button-save" disabled>
+					<p>Сохранить</p>
+				</button>
+				<button class="form-button-del">
+					<p>Удалить учетную запись</p>
+				</button>
+			</form>
+			
+		</div>
+	</div>
+</body>
+</html>
