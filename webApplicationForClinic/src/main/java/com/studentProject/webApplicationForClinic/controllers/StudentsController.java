@@ -10,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -80,11 +81,26 @@ public class StudentsController {
     @PostMapping("/newStudent")
     @PreAuthorize("hasAuthority('permission:write')")
     public String createNewStudent(Student student) {
-        System.out.println("Пришедшая модель " + student.toString());
         studentRepository.save(student);
         return "redirect:/students/allStudents";
-
     }
 
+    @GetMapping("/{id}/edit")
+    @PreAuthorize("hasAuthority('permission:write')")
+    public String editUser(@PathVariable(value = "id", required = false) long id, Model model) {
+        model.addAttribute("studentForEdit", studentRepository.findById(id));
+        return "students/edit";
+    }
+    @PatchMapping("/{id}")
+    @PreAuthorize("hasAuthority('permission:write')")
+    public String update(@ModelAttribute("studentForEdit") Student student) {
+        studentRepository.save(student);
+        return "redirect:/students/allStudents";
+    }
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable(value = "id", required = false) int id) {
+        studentRepository.delete(studentRepository.findById(id));
+        return "redirect:/students/allStudents";
+    }
 
 }
